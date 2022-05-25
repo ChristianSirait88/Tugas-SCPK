@@ -283,9 +283,8 @@ MPD = str2double(readmatrix('Pembangkit.xlsx', datakapasitas));
 w_MPD = calc_norm(MPD);
 
 wH = [w_MPK w_MPA w_MPD];
-disp('Score Lomba');
-scoreLomba = wH*w_MPB;
-hasil = max(scoreLomba);
+Hitung = wH*w_MPB;
+hasil = max(Hitung);
 set(handles.text5, 'String',hasil);
 
 % --- Executes on button press in pushbutton3.
