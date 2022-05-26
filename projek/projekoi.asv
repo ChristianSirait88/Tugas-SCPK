@@ -23,7 +23,7 @@ function varargout = projekoi(varargin)
 
 % Edit the above text to modify the response to help projekoi
 
-% Last Modified by GUIDE v2.5 26-May-2022 20:19:20
+% Last Modified by GUIDE v2.5 26-May-2022 19:39:54
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -287,12 +287,14 @@ datalokasi.SelectedVariableNames = (7);
 DL = readmatrix('Pembangkit.xlsx', datalokasi);
 
 wH = [w_MPK w_MPA w_MPD];
-Hitung =wH*w_MPB;
+Hitung = [wH*w_MPB DL] ;
+B
 hasil = max(Hitung);
-dataTampil = [DL num2cell(Hitung)]; 
-index = find(Hitung==hasil)
-res = DL(index)
-set(handles.text5, 'String',res);
+
+dKode = detectImportOptions('Pembangkit.xlsx','NumHeaderLines',1);
+dKode.SelectedVariableNames = (7);
+kode = readmatrix('Pembangkit.xlsx', dKode);
+dataTampil = [kode num2cell(B)]; 
 set(handles.tabel2, 'data', dataTampil);
 end
 
@@ -365,14 +367,4 @@ function tabel2_CellEditCallback(hObject, eventdata, handles)
 %	EditData: string(s) entered by the user
 %	NewData: EditData or its converted form set on the Data property. Empty if Data was not changed
 %	Error: error string when failed to convert EditData to appropriate value for Data
-% handles    structure with handles and user data (see GUIDATA)
-
-
-% --- Executes on key press with focus on radiobutton12 and none of its controls.
-function radiobutton12_KeyPressFcn(hObject, eventdata, handles)
-% hObject    handle to radiobutton12 (see GCBO)
-% eventdata  structure with the following fields (see MATLAB.UI.CONTROL.UICONTROL)
-%	Key: name of the key that was pressed, in lower case
-%	Character: character interpretation of the key(s) that was pressed
-%	Modifier: name(s) of the modifier key(s) (i.e., control, shift) pressed
 % handles    structure with handles and user data (see GUIDATA)
