@@ -290,8 +290,8 @@ wH = [w_MPK w_MPA w_MPD];
 Hitung =wH*w_MPB;
 hasil = max(Hitung);
 dataTampil = [DL num2cell(Hitung)]; 
-index = find(Hitung==hasil)
-res = DL(index)
+index = find(Hitung==hasil);
+res = DL(index);
 set(handles.text5, 'String',res);
 set(handles.tabel2, 'data', dataTampil);
 end
