@@ -312,6 +312,7 @@ set(handles.radiobutton6,'Value',0);
 set(handles.radiobutton10,'Value',0);
 set(handles.radiobutton12,'Value',0);
 set(handles.text5, 'String',"");
+set(handles.tabel2,'data','');
 global x1 
 global y1 
 global z1
